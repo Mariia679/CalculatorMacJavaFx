@@ -1,0 +1,199 @@
+<!--suppress JavaFxUnresolvedFxIdReference -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox prefHeight="380.0" prefWidth="233.0" stylesheets="@resources/style.css" styleClass="master-vbox"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller" fx:id="calc">
+    <HBox alignment="CENTER_LEFT" prefHeight="10.0" prefWidth="234.0" spacing="5.0" styleClass="control-bar">
+        <padding>
+            <Insets left="10.0" right="10.0" top="10.0"/>
+        </padding>
+        <Button fx:id="close" minHeight="-Infinity" minWidth="-Infinity" onAction="#closePressed"
+                prefHeight="13.0"
+                prefWidth="13.0"
+                styleClass="close-button"/>
+        <Button fx:id="minus" minHeight="-Infinity" minWidth="-Infinity" onAction="#minimizedPressed"
+                prefHeight="13.0"
+                prefWidth="13.0"
+                styleClass="minus-button"/>
+        <Button minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0"
+                prefWidth="13.0"
+                styleClass="plus-button"/>
+    </HBox>
+
+    <Label fx:id="display" alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="58.0" prefWidth="235.0" styleClass="display" text="0">
+        <padding>
+            <Insets left="10.0" right="19.0"/>
+        </padding>
+    </Label>
+
+    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+              prefHeight="250.0" prefWidth="235.0" VBox.vgrow="NEVER" opacity="Infinity">
+
+        <Button fx:id="mc" onAction="#memoryClearPressed" maxHeight="50" minHeight="50"
+                prefWidth="60.0" text="mc">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+                <String fx:value="buttons-topMemory"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="addToMemory" onAction="#addToMemoryPressed" maxHeight="50" minHeight="50"
+                prefWidth="60.0" text="m+" GridPane.columnIndex="1">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+                <String fx:value="buttons-topMemory"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="subtractFromMemory" onAction="#subtractFromMemoryPressed" maxHeight="50" minHeight="50"
+                prefWidth="60.0" text="m-" GridPane.columnIndex="2">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+                <String fx:value="buttons-topMemory"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="mr" onAction="#memoryReadPressed" maxHeight="50" minHeight="50"
+                prefWidth="60.0" text="mr" GridPane.columnIndex="3">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+                <String fx:value="operator"/>
+                <String fx:value="buttons-topMemory"/>
+            </styleClass>
+        </Button>
+
+        <Button fx:id="ac" onAction="#allClearPressed" prefHeight="50.0"
+                prefWidth="60.0" text="AC"
+                GridPane.rowIndex="1">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Очистить(Esc);Очистить все(Opt-Esc)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="inversion" onAction="#inversionPressed" prefHeight="50.0"
+                prefWidth="60.0" text="+/-" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Изменить знак отображаемого значения (или нажмите «Option-знак минус»)"
+                         styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="percentage" onAction="#percentagePressed" prefHeight="50.0"
+                prefWidth="60.0" text="\%" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="buttons-top"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Проценты (или нажмите «Shift-5»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="division" onAction="#operatorPressed" prefHeight="50.0"
+                prefWidth="60.0" text="&#247;" GridPane.rowIndex="1" GridPane.columnIndex="3"
+                style="-fx-font-size: 25px;">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+                <String fx:value="operator1"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Разделить (или нажмите «/»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="seven" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="7" GridPane.rowIndex="2" minHeight="-Infinity"/>
+        <Button fx:id="eight" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                minHeight="-Infinity"/>
+        <Button fx:id="nine" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                minHeight="-Infinity"/>
+        <Button fx:id="multiplication" onAction="#operatorPressed" prefHeight="50.0"
+                prefWidth="60.0" text="╳" GridPane.columnIndex="3" GridPane.rowIndex="2" minHeight="-Infinity">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Умножить (или нажмите «*»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="four" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="4" GridPane.rowIndex="3" minHeight="-Infinity"/>
+        <Button fx:id="five" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                minHeight="-Infinity"/>
+        <Button fx:id="six" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3"
+                minHeight="-Infinity"/>
+        <Button fx:id="subtraction" onAction="#operatorPressed" prefHeight="50.0"
+                prefWidth="60.0" text="—" GridPane.columnIndex="3" GridPane.rowIndex="3" minHeight="-Infinity"
+                style="-fx-font-size: 16px;-fx-font-weight: 900;">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Вычесть (или нажмите «-»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="one" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="1" GridPane.rowIndex="4" minHeight="-Infinity"/>
+        <Button fx:id="two" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                minHeight="-Infinity"/>
+        <Button fx:id="three" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4"
+                minHeight="-Infinity"/>
+        <Button fx:id="addition" onAction="#operatorPressed" prefHeight="50.0"
+                prefWidth="60.0" text="&#43;" GridPane.columnIndex="3" GridPane.rowIndex="4"
+                minHeight="-Infinity" style="-fx-font-size: 26px;">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+                <String fx:value="operator"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Прибавить (нажмите «+»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="zero" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="120.0" styleClass="buttons" text="0" GridPane.columnSpan="2" GridPane.rowIndex="5"
+                minHeight="-Infinity">
+            <padding>
+                <Insets right="60"/>
+            </padding>
+        </Button>
+        <Button fx:id="point" onAction="#numberPressed" prefHeight="50.0"
+                prefWidth="60.0" styleClass="buttons" text="," GridPane.columnIndex="2" GridPane.rowIndex="5"
+                minHeight="-Infinity"/>
+        <Button fx:id="equal" onAction="#calculateResult" prefHeight="50.0"
+                prefWidth="60.0" text="&#61;" GridPane.columnIndex="3" GridPane.rowIndex="5"
+                minHeight="-Infinity" style="-fx-font-size: 26px">
+            <styleClass>
+                <String fx:value="buttons"/>
+                <String fx:value="operator-buttons"/>
+                <String fx:value="operator"/>
+            </styleClass>
+            <tooltip>
+                <Tooltip text="Равно (или нажмите «Return»)" styleClass="tooltip-hover"/>
+            </tooltip>
+        </Button>
+
+    </GridPane>
+</VBox>

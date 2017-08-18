@@ -1,0 +1,96 @@
+.master-vbox {
+    -fx-border-width: 0.5;
+    -fx-border-style: solid;
+    -fx-border-color: #000;
+    -fx-font-weight: lighter;
+}
+
+.control-bar {
+    -fx-background-color: rgba(94, 94, 94, .8);
+}
+
+.close-button:hover {
+    -fx-background-image: url("./image/close.png");
+    -fx-background-color: rgb(139, 139, 145);
+}
+
+.minus-button:hover {
+    -fx-background-image: url("./image/minus.png");
+    -fx-background-color: rgb(139, 139, 145);
+}
+
+.plus-button:hover {
+    -fx-background-image: url("./image/plus.png");
+    -fx-background-color: rgb(139, 139, 145);
+}
+
+.close-button, .minus-button, .plus-button {
+    -fx-background-radius: 50%;
+    -fx-background-color: rgb(139, 139, 145);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 65%;
+    -fx-background-insets: 0, 1, 1;
+}
+
+.display {
+    -fx-font-size: 50px;
+    -fx-background-color: rgba(94, 94, 94, .8);
+    -fx-text-fill: rgba(241, 241, 241, .9);
+    -fx-font-family: "Helvetica Neue";
+}
+
+.buttons {
+    -fx-font-size: 21;
+    -fx-background-color: rgb(217, 217, 217);
+    -fx-background-radius: 0;
+    -fx-border-style: solid;
+    -fx-border-color: rgba(123, 123, 123, 1);
+    -fx-border-width: 0 1 1 0;
+    -fx-background-insets: 0, 1, 1;
+    -fx-text-fill: #000;
+}
+
+.operator-buttons {
+    -fx-text-fill: #fff;
+    -fx-background-color: rgb(242, 128, 38);
+}
+
+.operator {
+    -fx-font-size: 24px;
+}
+
+.operator1 {
+    -fx-font-size: 26px;
+}
+
+.buttons-top {
+    -fx-font-size: 19px;
+    -fx-background-color: rgb(204, 204, 204);
+}
+
+.tooltip-hover {
+    -fx-font-size: 11px;
+    -fx-arc-height: 1px;
+    -fx-background-color: white;
+    -fx-text-fill: #000;
+}
+
+.buttons:pressed {
+    -fx-background-color: rgb(163, 163, 163);
+    -fx-text-fill: #000;
+}
+
+.operator-buttons:pressed {
+    -fx-text-fill: rgb(85, 85, 85);
+    -fx-background-color: rgb(182, 96, 29);
+}
+
+.buttons-top:pressed {
+    -fx-background-color: rgb(153, 153, 153);
+}
+
+.buttons-topMemory {
+    -fx-font-size: 19px;
+    -fx-font-family: sans-serif;
+}
